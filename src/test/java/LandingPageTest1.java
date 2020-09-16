@@ -3,10 +3,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.net.URI;
 
+@Listeners(GenerateReport.class)
 public class LandingPageTest1 {
     private static WebDriver webDriver;
 

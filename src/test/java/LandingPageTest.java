@@ -6,6 +6,7 @@ import org.testng.annotations.*;
 
 import java.net.URI;
 
+@Listeners(GenerateReport.class)
 public class LandingPageTest {
     private static WebDriver webDriver;
 

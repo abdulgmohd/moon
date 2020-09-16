@@ -2,6 +2,9 @@
 
 
 <suite name="Suite1" parallel="classes" thread-count="1"  >
+    <listeners>
+      <listener class-name="GenerateReport"></listener>
+    </listeners>
     <test name="Regression Test" >
         <classes>
             <class name="LandingPageTest" />
