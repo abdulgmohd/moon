@@ -1,0 +1,61 @@
+group 'my-proj'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+//dependencies {
+//    //testCompile group: 'junit', name: 'junit', version: '4.12'
+//
+//    testCompile 'junit:junit:4.12'
+//    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.8.1'
+//    testCompile 'org.testcontainers:spock:1.7.0'
+//
+//}
+
+
+dependencies {
+
+    // https://mvnrepository.com/artifact/org.spockframework/spock-core
+    compile(
+//        'org.codehaus.groovy:groovy-all:2.4.13'
+            'org.seleniumhq.selenium:selenium-java:3.8.1'
+    )
+
+    testCompile(
+            'junit:junit:4.12',
+            'org.codehaus.groovy:groovy-all:2.4.11',
+            'io.rest-assured:rest-assured:3.0.0',
+            'org.spockframework:spock-core:1.0-groovy-2.4',
+            'org.testng:testng:6.11'
+    )
+
+}
+
+test {
+
+    useTestNG() {
+        suites "src/test/resources/testNg.xml"
+        options {
+            systemProperties(System.getProperties())
+        }
+    }
+
+}
+
+
+//test {
+//    useJUnit() {
+//        includeCategories 'WarrantySetup'
+//        options {
+//            systemProperties(System.getProperties())
+//        }
+//    }
+//}
+
